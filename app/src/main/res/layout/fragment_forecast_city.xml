@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg_city"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:isScrollContainer="false"
+    tools:context=".ui.forecast_city.ForecastCityFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_search_city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColorHint="@color/turquoise"
+        app:boxStrokeWidth="0dp"
+        app:layout_constraintEnd_toStartOf="@id/iv_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_search_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:fontFamily="@font/concert_one"
+            android:gravity="center"
+            android:hint="@string/hint_edit"
+            android:inputType="text"
+            android:shadowColor="@color/turquoise"
+            android:textColor="@color/turquoise"
+            android:textColorHighlight="@color/turquoise"
+            android:textColorHint="@color/turquoise"
+            android:textColorLink="@color/turquoise"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/iv_search"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_forecast_city_search"
+        app:layout_constraintBottom_toBottomOf="@id/til_search_city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/til_search_city"
+        app:layout_constraintTop_toTopOf="@id/til_search_city" />
+
+    <ImageView
+        android:id="@+id/iv_current_icon"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_search_city" />
+
+    <TextView
+        android:id="@+id/tv_average_current_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/concert_one"
+        android:gravity="center"
+        android:textColor="@color/turquoise"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_current_icon"
+        tools:text="23°C" />
+
+    <TextView
+        android:id="@+id/tv_min_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/concert_one"
+        android:textColor="@color/turquoise"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@id/tv_max_temp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_average_current_temp"
+        tools:text="18°C" />
+
+    <TextView
+        android:id="@+id/tv_max_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/concert_one"
+        android:textColor="@color/turquoise"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_min_temp"
+        app:layout_constraintTop_toBottomOf="@id/tv_average_current_temp"
+        tools:text="23°C" />
+
+    <ImageView
+        android:id="@+id/iv_current_wind"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_wind"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/iv_current_humidity"
+        app:layout_constraintEnd_toStartOf="@id/tv_speed_current_wind"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_min_temp"
+        app:tint="@color/turquoise" />
+
+    <TextView
+        android:id="@+id/tv_speed_current_wind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/concert_one"
+        android:textColor="@color/turquoise"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_percent_current_humidity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_current_wind"
+        app:layout_constraintTop_toBottomOf="@id/tv_max_temp"
+        tools:text="20.2 kph" />
+
+    <ImageView
+        android:id="@+id/iv_current_humidity"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/ic_humidity"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/rv_three_days"
+        app:layout_constraintEnd_toStartOf="@id/tv_percent_current_humidity"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_current_wind"
+        app:tint="@color/turquoise" />
+
+    <TextView
+        android:id="@+id/tv_percent_current_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/concert_one"
+        android:textColor="@color/turquoise"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/rv_three_days"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_current_humidity"
+        app:layout_constraintTop_toBottomOf="@id/tv_speed_current_wind"
+        tools:text="81 %" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_three_days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/day_item" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="tv_max_temp, tv_min_temp, tv_percent_current_humidity, tv_speed_current_wind, iv_current_humidity, iv_current_wind" />
+</androidx.constraintlayout.widget.ConstraintLayout>

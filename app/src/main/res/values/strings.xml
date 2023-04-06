@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Weather NordClan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_edit">Write city here</string>
+</resources>

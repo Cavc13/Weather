@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/weather_navigation"
+    app:startDestination="@id/forecastCityFragment">
+
+    <fragment
+        android:id="@+id/forecastCityFragment"
+        android:name="com.snusnu.weathernordclan.ui.forecast_city.ForecastCityFragment"
+        android:label="fragment_forecast_city"
+        tools:layout="@layout/fragment_forecast_city" >
+        <action
+            android:id="@+id/action_forecastCityFragment_to_forecastDayFragment"
+            app:destination="@id/forecastDayFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/forecastDayFragment"
+        android:name="com.snusnu.weathernordclan.ui.forecast_day.ForecastDayFragment"
+        android:label="fragment_forecast_day"
+        tools:layout="@layout/fragment_forecast_day" >
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
+</navigation>
